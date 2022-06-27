@@ -1,0 +1,11 @@
+TEMPLATE LITERALS 
+comillas invertidas en javascript 
+nos sirven para crear plantillas literales
+
+ PERMITEN CREAR CADEBNA DE CARACTERES QUE PUEDE CONTENER CIERTO CÓDIGP DE javascript
+ para definir el resultado
+
+
+ comilla simple es alt+39      '
+ comilla invertida alt+96      `
+ arroba        alt+64          @
