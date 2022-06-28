@@ -7,8 +7,16 @@ import Boton from './componentes/Boton';
 import Pantalla from './componentes/Pantalla';
 import BotonClear from './componentes/botonClear';
 
+import {useState} from 'react';
+
 
 function App() {
+ 
+ const[estadoPantalla, setEstadoPantalla]= useState("");
+
+ const agregarEstadoPantalla = val=>{
+setEstadoPantalla(estadoPantalla+val);
+ }; 
   return (
     <div className="App">
 
@@ -20,31 +28,31 @@ function App() {
       />
     </div>
     <div className='contenedor-calculadora'>
-      <Pantalla />
+      <Pantalla input={estadoPantalla}/>
       
       <div className='fila'>
-        <Boton>1</Boton>
-        <Boton>2</Boton>
-        <Boton>3</Boton>
-        <Boton>+</Boton>
+        <Boton manejarClic={agregarEstadoPantalla} >1</Boton>
+        <Boton manejarClic={agregarEstadoPantalla}>2</Boton>
+        <Boton manejarClic={agregarEstadoPantalla}>3</Boton>
+        <Boton manejarClic={agregarEstadoPantalla}>+</Boton>
       </div>
       <div className='fila'>
-        <Boton>4</Boton>
-        <Boton>5</Boton>
-        <Boton>6</Boton>
-        <Boton>-</Boton>
+        <Boton manejarClic={agregarEstadoPantalla}>4</Boton>
+        <Boton manejarClic={agregarEstadoPantalla}>5</Boton>
+        <Boton manejarClic={agregarEstadoPantalla}> 6</Boton>
+        <Boton manejarClic={agregarEstadoPantalla}>-</Boton>
         </div>
       <div className='fila'>
-        <Boton>7</Boton>
-        <Boton>8</Boton>
-        <Boton>9</Boton>
-        <Boton>*</Boton>
+        <Boton manejarClic={agregarEstadoPantalla}>7</Boton>
+        <Boton manejarClic={agregarEstadoPantalla}>8</Boton>
+        <Boton manejarClic={agregarEstadoPantalla}>9</Boton>
+        <Boton manejarClic={agregarEstadoPantalla}>*</Boton>
       </div>
       <div className='fila'>
-        <Boton>=</Boton>
-        <Boton>0</Boton>
-        <Boton>.</Boton>
-        <Boton>/</Boton>
+        <Boton manejarClic={agregarEstadoPantalla}>=</Boton>
+        <Boton manejarClic={agregarEstadoPantalla}>0</Boton>
+        <Boton manejarClic={agregarEstadoPantalla}>.</Boton>
+        <Boton manejarClic={agregarEstadoPantalla}>/</Boton>
       </div>
      
      
