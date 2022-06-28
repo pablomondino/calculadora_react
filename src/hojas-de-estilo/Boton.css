@@ -15,3 +15,17 @@
   cursor: pointer;
   user-select: none;
 }
+
+.boton-contenedor:hover{
+background-color: rgb(89, 89, 202);
+}
+.operador{
+background-color: rgb(2, 172, 172);
+
+}
+
+.operador:hover{
+
+ background-color:rgb(197, 138, 49) ; 
+
+}
