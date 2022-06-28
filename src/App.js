@@ -2,8 +2,11 @@ import logo from './logo.svg';
 import './App.css';
 import logoCalculadora from './imagenes/logo-calculadora.png';
 
+
 import Boton from './componentes/Boton';
 import Pantalla from './componentes/Pantalla';
+import BotonClear from './componentes/botonClear';
+
 
 function App() {
   return (
@@ -47,7 +50,9 @@ function App() {
      
      
      
-      <div className='fila'>clear</div>
+      <div className='fila'>
+      <BotonClear>Clear</BotonClear>
+      </div>
 
 
     </div>
