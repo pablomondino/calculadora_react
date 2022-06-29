@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import logoCalculadora from './imagenes/logo-calculadora.png';
-
+import {evaluate} from 'mathjs';
 
 import Boton from './componentes/Boton';
 import Pantalla from './componentes/Pantalla';
@@ -17,6 +17,14 @@ function App() {
  const agregarEstadoPantalla = val=>{
 setEstadoPantalla(estadoPantalla+val);
  }; 
+
+ const calcularResultado =()=>{
+  if (estadoPantalla){
+  setEstadoPantalla(evaluate(estadoPantalla));
+  }else{
+    alert("Por favor ingrese un número para poder realizar un cálculo")
+  }
+}
   return (
     <div className="App">
 
@@ -49,7 +57,7 @@ setEstadoPantalla(estadoPantalla+val);
         <Boton manejarClic={agregarEstadoPantalla}>*</Boton>
       </div>
       <div className='fila'>
-        <Boton manejarClic={agregarEstadoPantalla}>=</Boton>
+        <Boton manejarClic={calcularResultado}>=</Boton>
         <Boton manejarClic={agregarEstadoPantalla}>0</Boton>
         <Boton manejarClic={agregarEstadoPantalla}>.</Boton>
         <Boton manejarClic={agregarEstadoPantalla}>/</Boton>
@@ -59,9 +67,11 @@ setEstadoPantalla(estadoPantalla+val);
      
      
       <div className='fila'>
-      <BotonClear>Clear</BotonClear>
+      <BotonClear manejarClear={() => setEstadoPantalla('')}>
+      Clear
+      </BotonClear>
       </div>
-
+ 
 
     </div>
      
